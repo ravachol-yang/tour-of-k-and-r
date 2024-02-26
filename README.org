@@ -1,0 +1,8 @@
+#+title: Tour de K&R The C Programming Language
+#+author: Ravachol <ravachol.yang@gmail.com>
+My notes and solutions for exercises of the classic book *The C Programming Language* by *K&R*.
+* Preface
+TODO
+
+* Prerequisites
+TODO
