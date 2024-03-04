@@ -37,10 +37,12 @@ main ()
 
   /* Body of the histogram */
   printf("\n");
-  for (i = 1; i < longest; ++i) {
+  for (i = 1; i <= longest+1; ++i) {
     for (j = 0; j < MAX_WORDS; ++j) {
       if (lword[j] >= i)
 	printf("#\t");
+      else if (lword[j] != 0 && lword[j] == i - 1)
+	printf("%d\t", i - 1);
       else
 	printf(" \t");
     }
