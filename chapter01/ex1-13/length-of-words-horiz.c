@@ -27,7 +27,7 @@ main ()
     if (lword[i] == 0)
       ;
     else {
-      printf("The #%d Word:\t", i);
+      printf("The #%d Word:\t", i+1);
       for (j = 0; j < lword[i]; ++j)
 	printf("#");
       printf("/%d\n", lword[i]);
