@@ -23,6 +23,7 @@ main ()
     printf("%6.0f\t%3.1f\n",fahr,convert(fahr));
     fahr = fahr + step;
   }
+  return 0;
 }
 
 float convert(float fahr)
