@@ -22,11 +22,12 @@ int main ()
 unsigned rightrot(unsigned x, int n)
 {
   unsigned num = x;
-  int move = 0;
-  for (num = num - (num % 2);num != 1; num = num / 2) {
+  int move;
+
+  for (move = 0; num != 0; num >>= 1) {
     move++;
   }
-  move--;
+  move -= n;
   unsigned out = ((x & ~(~0 << n)) << move) | (x >> n);
   return out;
 }
