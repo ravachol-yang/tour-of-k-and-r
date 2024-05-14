@@ -7,7 +7,6 @@
 
 #include <stdio.h>
 #include <ctype.h>
-
 #define MAX_HEX_LEN 100
 #define HEX 16
 
