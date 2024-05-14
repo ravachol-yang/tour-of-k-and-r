@@ -12,7 +12,7 @@ int main()
   int y = 87; /* 1010111 */
 
   int p = 3;
-  int n = 2;
+  int n = 3;
 
   /* should be 1011011 */
   int out = setbits(x, p, n, y);
@@ -24,10 +24,9 @@ int main()
 
 unsigned setbits (unsigned x, int p ,int n, unsigned y) {
 
-  int x_changed = (x >> (p+1-n)) & ~(~0 << n);
-  int y_changed = (y >> (p+1-n)) & ~(~0 << n);
+  int mask = ~(~0 << n) << (p+1-n);
   
-  int out = y - (y_changed << (p+1-n)) + (x_changed << (p+1-n));
+  unsigned out = (y & ~mask) | (x & mask); 
 
   return out;
 }
