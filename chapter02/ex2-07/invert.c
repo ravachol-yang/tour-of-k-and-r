@@ -22,10 +22,8 @@ int main()
 
 unsigned invert(unsigned x, int p, int n)
 {
-  int offset = p + 1 - n;
-  int changed = (x >> offset) & ~(~0 << n);
-  
-  unsigned out = x - (changed << offset) + (((~changed) & ~(~0 << n)) << offset);
+  int mask = ~(~0 << n) << (p+1-n);
+  unsigned out = (x & ~mask) | ~(x & mask) & mask;
 
   return out;
 }
