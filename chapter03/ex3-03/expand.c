@@ -26,22 +26,22 @@ int main ()
 void expand(char s1[], char s2[])
 {
     int i,j = 0;
-    int k;
+    int c;
 
     for (i=0; s1[i] != '\0'; ++i) {
-	k = 0;
+	c = 0;
 	if (s1[i+1] == '-') {
+	    c = s1[i];
 	    if (s1[i] < s1[i+2]) {
-		j--;
-		while (s2[j++] < s1[i+2]) {
-		    s2[j] = s1[i]+k;
-		    ++k;
+		for (;c <= s1[i+2];j++) {
+		    s2[j] = c;
+		    ++c;
 		    printf(s2);
 		    printf("\n");
 		}
 		i+=2;
-		k = 0;
-		j--;
+		c = 0;
+		--j;
 	    }
 	}
 	s2[j] = s1[i];
